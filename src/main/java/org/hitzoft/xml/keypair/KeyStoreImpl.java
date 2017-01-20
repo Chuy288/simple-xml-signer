@@ -45,12 +45,6 @@ public class KeyStoreImpl implements KeyPairHolder {
         }
     }
 
-    public KeyStoreImpl(String algorithm) throws NoSuchAlgorithmException {
-        KeyPairGenerator kpg = KeyPairGenerator.getInstance(algorithm);
-        kpg.initialize(2048);
-        keyPair = kpg.generateKeyPair();
-    }
-
     @Override
     public KeyPair getKeyPair() throws KeyPairHolderException {
         return keyPair;

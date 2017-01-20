@@ -11,6 +11,12 @@ public enum SignatureMethodAlgorithm {
     RSA_SHA1("http://www.w3.org/2000/09/xmldsig#rsa-sha1"),
     RSA_SHA256("http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"),
     RSA_SHA512("http://www.w3.org/2001/04/xmldsig-more#rsa-sha512");
+//    
+//    ECDSA_SHA1("http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha1"),
+//    ECDSA_SHA256("http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha256"),
+//    ECDSA_SHA512("http://www.w3.org/2001/04/xmldsig-more#ecdsa-sha512"),
+//    
+//    HMAC_SHA1("http://www.w3.org/2000/09/xmldsig#hmac-sha1");
 
     private final String URI;
 
