@@ -1,17 +1,14 @@
 package org.hitzoft.xml.test;
 
-import java.io.Closeable;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.hitzoft.xml.DigestMethodAlgorithm;
 import org.hitzoft.xml.SignatureMethodAlgorithm;
 import org.hitzoft.xml.XMLSigner;
-import org.hitzoft.xml.keypair.KeyStoreImpl;
+import org.hitzoft.xml.XMLSignerValidationException;
+import org.hitzoft.xml.keypair.KeyPairGenerated;
+import org.hitzoft.xml.keypair.KeyPairHolder;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -52,15 +49,26 @@ public class SignXmlTest {
         signer = null;
     }
 
+    private boolean valid(Document signedXML) {
+        try {
+            return signer.valid(signedXML);
+        } catch (XMLSignerValidationException ex) {
+            System.out.println(ex.getValidationMessages());
+            return false;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
+
     @Test
     public void signXMLSHA1WithRSA() {
         try {
             // Load Keystore
-            KeyStoreImpl keystore = new KeyStoreImpl("RSA");
+            KeyPairHolder keyHolder = new KeyPairGenerated("RSA", 2048);
 
             signer.setDigestMethodAlgorithm(DigestMethodAlgorithm.SHA1);
             signer.setSignatureMethodAlgorithm(SignatureMethodAlgorithm.RSA_SHA1);
-            signer.setKeyPairProvider(keystore);
+            signer.setKeyPairProvider(keyHolder);
 
             signedXML = signer.sign(unsignedXML);
 
@@ -71,12 +79,79 @@ public class SignXmlTest {
         Assert.assertTrue(valid(signedXML));
     }
 
-    private boolean valid(Document signedXML) {
+    @Test
+    public void signXMLSHA256WithRSA() {
         try {
-            return signer.valid(signedXML);
+            // Load Keystore
+            KeyPairHolder keyHolder = new KeyPairGenerated("RSA", 2048);
+
+            signer.setDigestMethodAlgorithm(DigestMethodAlgorithm.SHA256);
+            signer.setSignatureMethodAlgorithm(SignatureMethodAlgorithm.RSA_SHA256);
+            signer.setKeyPairProvider(keyHolder);
+
+            signedXML = signer.sign(unsignedXML);
+
         } catch (Exception ex) {
             ex.printStackTrace();
-            return false;
+            Assert.fail(ex.getMessage());
         }
+        Assert.assertTrue(valid(signedXML));
+    }
+
+    @Test
+    public void signXMLSHA512WithRSA() {
+        try {
+            // Load Keystore
+            KeyPairHolder keyHolder = new KeyPairGenerated("RSA", 2048);
+
+            signer.setDigestMethodAlgorithm(DigestMethodAlgorithm.SHA512);
+            signer.setSignatureMethodAlgorithm(SignatureMethodAlgorithm.RSA_SHA512);
+            signer.setKeyPairProvider(keyHolder);
+
+            signedXML = signer.sign(unsignedXML);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Assert.fail(ex.getMessage());
+        }
+        Assert.assertTrue(valid(signedXML));
+    }
+
+    @Test
+    public void signXMLSHA1WithDSA() {
+        try {
+            // Load Keystore
+            KeyPairHolder keyHolder = new KeyPairGenerated("DSA", 1024);
+
+            signer.setDigestMethodAlgorithm(DigestMethodAlgorithm.SHA1);
+            signer.setSignatureMethodAlgorithm(SignatureMethodAlgorithm.DSA_SHA1);
+            signer.setKeyPairProvider(keyHolder);
+
+            signedXML = signer.sign(unsignedXML);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Assert.fail(ex.getMessage());
+        }
+        Assert.assertTrue(valid(signedXML));
+    }
+
+    @Test
+    public void signXMLSHA256WithDSA() {
+        try {
+            // Load Keystore
+            KeyPairHolder keyHolder = new KeyPairGenerated("DSA", 2048);
+
+            signer.setDigestMethodAlgorithm(DigestMethodAlgorithm.SHA256);
+            signer.setSignatureMethodAlgorithm(SignatureMethodAlgorithm.DSA_SHA256);
+            signer.setKeyPairProvider(keyHolder);
+
+            signedXML = signer.sign(unsignedXML);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            Assert.fail(ex.getMessage());
+        }
+        Assert.assertTrue(valid(signedXML));
     }
 }
