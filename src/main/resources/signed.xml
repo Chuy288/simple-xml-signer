@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><root>
     <node>Hello World</node>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><DigestValue>1MitWGf94+YpXbPphzbjMCUAw6I=</DigestValue></Reference></SignedInfo><SignatureValue>ETyYbFboCiLgEDJfNQdbqF6L6QCg1n+8NN3HX2chGqzac7HN6T7SpqogSrzIZLQSF/FHUuh7hhbF
-QLP9CG9wHgTiAJOeUMQb0Q1+tYpLfb5cYnGC8dc+DizupAUelcNqxcZgi4MskoN4z1d8VZtdIi1q
-F9kGMXWOM5LEX+UEkOYSSYMoyXO1XFjgUaZKVzqf0lnTl72Rv3s2exaru37/P+ojnQ859ENqf6uo
-z4x1fcZEtvADSvdr8PMuYguOuN2XceT0zO78k0jhgKRLHDqhLj+ueV0qdjHvNBsgGNnwLSDPnzpt
-QnBrH8XaCJdqQfLGFg1aIsa+29Wl0nmvFZY7dg==</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>2Qy+H2izYz5ph5GRZoQaWoCAjGGkqjAFjJU0mYYZ1aSaY2A3tSndMoYhMFvghLR9AnTXZdfoGGg+
-57J2/SIyMEKkUErbFNdgjcvscO/ZQJqKTgmSefY6zzVdeSXWxwpyy7o7mqNhRYZu26l55zedhDQH
-JJFtdXn5Wn1fAM6f8LBqz/NmQAM40ghooiAs0ffadZqtMHkLs4R6RODjqoL3HtOIAtFaL52PrHyz
-Fv16vv6zS+y+w5jeHBatJeWchtxYNd7c6REDqWNYySq/WJL6AacJz+75mWZAjPC6ow4mYuW51UmY
-WEOf4+5UxV3VTNaetMS6a3wj8iwKFI80G4dKqw==</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue></KeyInfo></Signature></root>
+    <Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+        <SignedInfo>
+            <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+            <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+            <Reference URI="">
+                <Transforms>
+                    <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </Transforms>
+                <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                <DigestValue>1MitWGf94+YpXbPphzbjMCUAw6I=</DigestValue>
+            </Reference>
+        </SignedInfo>
+        <SignatureValue>ETyYbFboCiLgEDJfNQdbqF6L6QCg1n+8NN3HX2chGqzac7HN6T7SpqogSrzIZLQSF/FHUuh7hhbF
+            QLP9CG9wHgTiAJOeUMQb0Q1+tYpLfb5cYnGC8dc+DizupAUelcNqxcZgi4MskoN4z1d8VZtdIi1q
+            F9kGMXWOM5LEX+UEkOYSSYMoyXO1XFjgUaZKVzqf0lnTl72Rv3s2exaru37/P+ojnQ859ENqf6uo
+            z4x1fcZEtvADSvdr8PMuYguOuN2XceT0zO78k0jhgKRLHDqhLj+ueV0qdjHvNBsgGNnwLSDPnzpt
+            QnBrH8XaCJdqQfLGFg1aIsa+29Wl0nmvFZY7dg==</SignatureValue>
+        <KeyInfo>
+            <KeyValue>
+                <RSAKeyValue>
+                    <Modulus>2Qy+H2izYz5ph5GRZoQaWoCAjGGkqjAFjJU0mYYZ1aSaY2A3tSndMoYhMFvghLR9AnTXZdfoGGg+
+                        57J2/SIyMEKkUErbFNdgjcvscO/ZQJqKTgmSefY6zzVdeSXWxwpyy7o7mqNhRYZu26l55zedhDQH
+                        JJFtdXn5Wn1fAM6f8LBqz/NmQAM40ghooiAs0ffadZqtMHkLs4R6RODjqoL3HtOIAtFaL52PrHyz
+                        Fv16vv6zS+y+w5jeHBatJeWchtxYNd7c6REDqWNYySq/WJL6AacJz+75mWZAjPC6ow4mYuW51UmY
+                        WEOf4+5UxV3VTNaetMS6a3wj8iwKFI80G4dKqw==</Modulus>
+                    <Exponent>AQAB</Exponent>
+                </RSAKeyValue>
+            </KeyValue>
+        </KeyInfo>
+    </Signature>
+</root>

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.security.Key;
 import java.security.KeyPair;
-import java.security.KeyPairGenerator;
 import java.security.KeyStore;
 import java.security.KeyStoreException;
 import java.security.NoSuchAlgorithmException;
@@ -46,7 +45,7 @@ public class KeyStoreImpl implements KeyPairHolder {
     }
 
     @Override
-    public KeyPair getKeyPair() throws KeyPairHolderException {
+    public KeyPair getKeyPair() {
         return keyPair;
     }
 

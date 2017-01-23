@@ -19,7 +19,7 @@ import org.w3c.dom.Document;
  *
  * @author jesus.espinoza
  */
-public class SignXmlTest {
+public class SignWithGeneratedKeyPairlTest {
 
     private Document unsignedXML;
     private Document signedXML;

@@ -22,7 +22,7 @@ public class KeyPairGenerated implements KeyPairHolder {
     }
 
     @Override
-    public KeyPair getKeyPair() throws KeyPairHolderException {
+    public KeyPair getKeyPair() {
         return keyPair;
     }
 }

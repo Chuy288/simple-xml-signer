@@ -12,6 +12,10 @@ public class KeyPairHolderException extends GeneralSecurityException {
         super(msg);
     }
 
+    public KeyPairHolderException(String msg, Throwable cause) {
+        super(msg, cause);
+    }
+
     public KeyPairHolderException(Throwable cause) {
         super(cause);
     }
