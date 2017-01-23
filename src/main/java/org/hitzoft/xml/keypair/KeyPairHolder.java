@@ -8,6 +8,6 @@ import java.security.KeyPair;
  */
 public interface KeyPairHolder {
 
-    public KeyPair getKeyPair() throws KeyPairHolderException;
+    public KeyPair getKeyPair();
 
 }

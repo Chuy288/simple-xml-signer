@@ -149,6 +149,12 @@ public class XMLSigner {
 
         // Marshal, generate, and sign the enveloped signature.
         signature.sign(domSignContext);
+        
+//        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+//        Transformer transformer = transformerFactory.newTransformer();
+//
+//        transformer.transform(new DOMSource(document), new StreamResult(System.out));
+        
         return document;
     }
 
